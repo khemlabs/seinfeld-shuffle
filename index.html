@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Seinfeld shuffle" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Seinfeld, shuffle" />
+    <meta name="author" content="Pablo Gambetta" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&display=swap");
+      .body {
+        background-color: #eddede;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+      }
+      .body h1 {
+        font-family: "Old Standard TT", serif;
+      }
+      .body button {
+        width: 90%;
+        height: 15vh;
+        background-color: #ffffff;
+        border: 1px solid rgb(209, 213, 219);
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        color: #111827;
+        font-family: "Old Standard TT", serif;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        text-decoration: none #d1d5db solid;
+        text-decoration-thickness: auto;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      .body div {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 5vh;
+        color: white;
+        padding: 16px;
+      }
+      .body div a {
+        color: white;
+        font-family: "Old Standard TT", serif;
+      }
+    </style>
+  </head>
+
+  <body class="body">
+    <h1>Seinfeld SHUFFLE</h1>
+
+    <button onclick="redirect()">SHUFFLE</button>
+
+    <div>
+      <p>Powered by <a href="https://khemlabs.com">Khemlabs</a></p>
+    </div>
+
+    <script>
+      const episodes = [
+        80132845, 80132847, 80132848, 80132846, 80132849, 80132850, 80132851,
+        80132854, 80132856, 80132857, 80132859, 80132861, 80132860, 80132914,
+        80132853, 80132855, 80132852, 80132793, 80132794, 80132795, 80132796,
+        80132798, 80132797, 80132799, 80132900, 80132901, 80132858, 80132902,
+        80132903, 80132905, 80132906, 80132904, 80132907, 80132913, 80132908,
+        80132909, 80132910, 80132911, 80132912, 80132862, 80132863, 80132864,
+        80132866, 80132867, 80132868, 80132869, 80132870, 80132681, 80132871,
+        80132683, 80132872, 80132684, 80132873, 80132687, 80132874, 80132692,
+        80132876, 80132691, 80132875, 80132916, 80132878, 80132918, 80132877,
+        80132920, 80132879, 80132923, 80132880, 80132924, 80132882, 80132925,
+        80132883, 80132928, 80132881, 80132930, 80132865, 80132931, 80132672,
+        80132933, 80132674, 80132934, 80132673, 80132936, 80132675, 80132940,
+        80132676, 80132942, 80132677, 80132944, 80132679, 80132946, 80132678,
+        80132948, 80132680, 80132950, 80132682, 80132959, 80132685, 80132953,
+        80132686, 80132955, 80132688, 80132960, 80132689, 80132958, 80132690,
+        80132694, 80132917, 80132696, 80132919, 80132698, 80132921, 80133000,
+        80132922, 80133002, 80132927, 80133005, 80132926, 80133006, 80132938,
+        80133008, 80132929, 80133010, 80132932, 80133012, 80132934, 80133014,
+        80132937, 80133016, 80132939, 80133018, 80132941, 80133020, 80132943,
+        80133022, 80132945, 80133024, 80132947, 80133026, 80132949, 80133028,
+        80132951, 80133030, 80132952, 80133032, 80132954, 80133034, 80132956,
+        80133036, 80132957, 80132693, 80132695, 80132697, 80132699, 80133001,
+        80133003, 80133004, 80133007, 80133009, 80133011, 80133013, 80133015,
+        80133017, 80133019, 80133021, 80133022, 80133025, 80133026, 80133029,
+        80133031, 80133033, 80133034,
+      ];
+      const netflixSuffix = "https://www.netflix.com/watch/";
+
+      function redirect() {
+        const episode = shuffle();
+        return (window.location = `${netflixSuffix}${episodes[episode]}`);
+      }
+
+      function shuffle() {
+        const random = Math.floor(
+          Math.random() * Math.floor(episodes.length) - 1
+        );
+        return random >= 0 ? random : shuffle();
+      }
+    </script>
+  </body>
+</html>

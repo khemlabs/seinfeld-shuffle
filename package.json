@@ -1,0 +1,15 @@
+{
+  "name": "seinfeld-shuffle",
+  "version": "1.0.0",
+  "description": "Seinfeld shuffle",
+  "main": "index.html",
+  "scripts": {
+    "serve": "serve ."
+  },
+  "keywords": [
+    "seinfeld",
+    "shuffle"
+  ],
+  "author": "elgambet",
+  "license": "MIT"
+}
